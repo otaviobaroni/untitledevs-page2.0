@@ -86,8 +86,8 @@ export function About({ ref }: AboutProps) {
       className="flex flex-col mb-20"
       ref={ref}
       animate={controls}
-      initial={{ opacity: 0.1, y: 40 }}
-      transition={{ duration: 0.9}}
+      initial={{ opacity: 0.1, y: 20}}
+      transition={{ duration: 1.5}}
       style={{ zIndex: open ? -1 : 0 }}
       //initial={{ opacity: 0.1, y: 10 }}
       //animate={controls}
