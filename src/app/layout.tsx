@@ -25,7 +25,7 @@ export default function RootLayout({
         <MenuProvider>
         <ModalProvider>
           {children}
-          <Analytics />
+          {/*<Analytics />*/}
         </ModalProvider>
         </MenuProvider>
       </body>

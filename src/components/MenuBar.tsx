@@ -11,7 +11,7 @@ export function MenuBar () {
   const {open, turn} = useContext(MenuContext)
 
   useEffect(() => {
-    console.log(open)
+ 
   }, [open])
   return (
     <>
@@ -29,7 +29,7 @@ export function MenuBar () {
       </nav>
     </div>
     <div className="flex md:hidden justify-between items-center top-0 ">
-      <Image className="w-[221px] h-8 block lg:hidden" alt="Logo da Untitled Devs" src={Logo2} />
+      <Image className="w-[221px] h-8 block lg:hidden" priority={true} alt="Logo da Untitled Devs" src={Logo2} />
       <button onClick={()=> {turn()}}><MenuIcon size={32}/></button>
     </div>
 

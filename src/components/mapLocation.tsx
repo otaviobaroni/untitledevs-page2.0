@@ -1,61 +1,50 @@
-'use client'
+import { useEffect, useRef } from 'react';
+import { Loader } from '@googlemaps/js-api-loader';
 
-import { Loader } from "@googlemaps/js-api-loader";
-import React, {useEffect} from "react";
+interface MapProps {
+  open: boolean;
+}
 
-export function Map(){
-  
-  const mapRef = React.useRef<HTMLDivElement>(null)
+export function Map({ open }: MapProps) {
+  const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const initMap = async () => {
-
-      const  loader = new Loader({
+    const loadMap = async () => {
+      const loader = new Loader({
         apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
-        version: 'weekly'
+        version: 'weekly',
       });
 
-      const { Map } = await loader.importLibrary('maps');
-      const {Marker} = await loader.importLibrary('marker') as google.maps.MarkerLibrary
+      try {
+        const google = await loader.load();
+        const { Map, Marker } = google.maps;
 
-      const position = {
-        lat:-22.024181365966797,
-        lng: -47.8944091796875
+        const position = {
+          lat: -22.024181365966797,
+          lng: -47.8944091796875,
+        };
+
+        const mapOptions: google.maps.MapOptions = {
+          center: position,
+          zoom: 19,
+          mapId: 'c313721f5fce1646',
+        };
+
+        const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
+
+        new Marker({
+          map: map,
+          position: position,
+        });
+      } catch (error) {
+        console.error('Erro ao carregar o mapa:', error);
       }
+    };
 
-      //map options
-      const mapOptions: google.maps.MapOptions = {
-        center: position,
-        zoom: 19,
-        mapId: "c313721f5fce1646",
+    if (open) {
+      loadMap();
+    }
+  }, [open]);
 
-      }
-
-     // const mapStyle: google.maps.MapTypeStyle = {
-       // stylers: 'c313721f5fce1646',
-
-      //}
-    
-      //setup
-      const map = new Map(mapRef.current as HTMLDivElement, mapOptions)
-
-      //setup marker 
-      const marker = new Marker({
-        map: map,
-        position: position,
-        
-
-      })
-
-  }
-  initMap();
-
-  }, [])
-
-
-  return(
-    <div style={{height: '300px', width: '300px' }} ref={mapRef} />
-
-    
-  )
+  return <div style={{ height: '300px', width: '300px' }} ref={mapRef} />;
 }

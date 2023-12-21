@@ -64,7 +64,7 @@ export function Hero({ ref }: HeroProps) {
               />
           </motion.h1>
           <motion.p
-          className="lg:text-center text-xl break-words"
+          className="lg:text-center text-xl text-center"
           initial={{ opacity: 0 }}
           animate={controls}
           transition={{ duration: 0.5 }}
@@ -82,8 +82,8 @@ export function Hero({ ref }: HeroProps) {
           </motion.a>
         </div> 
       </div>
-      <div className='lg:w-1/3 ml-auto absolute top-20 right-0 z-[-20]'>
-        <Image src={moonIlustration} alt='Ilustração' className="flex-row" />
+      <div className='lg:w-1/3 ml-auto absolute top-20 right-0 z-[-20] lg:flex-row hidden sm:flex'>
+        <Image src={moonIlustration} alt='Ilustração' className="flex-row" priority={true} />
       </div>
     </motion.section>
     

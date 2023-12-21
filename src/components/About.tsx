@@ -1,11 +1,60 @@
-'use client'
-
-
-import {Map} from '@/components/mapLocation'
+import { Map } from '@/components/mapLocation';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { Events } from 'react-scroll';
 
 export function About() {
-   return (
-    <section id="about" className='flex flex-col mb-20'>
+  {/* const controls = useAnimation();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY;
+
+      setScrollDirection(currentPosition > scrollPosition ? 'down' : 'up');
+      setScrollPosition(currentPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]);
+
+  useEffect(() => {
+    const triggerPosition = 300;
+    const opacity = Math.min(1, Math.max(0, (triggerPosition - scrollPosition) / triggerPosition));
+
+
+    if (scrollDirection === 'down' && scrollPosition > triggerPosition) {
+      controls.start({ opacity: 1 });
+    } else {
+      controls.start({ opacity: 0  });
+    }
+  }, [scrollPosition, scrollDirection, controls]);
+
+  useEffect(() => {
+    Events.scrollEvent.register('begin', () => {});
+    Events.scrollEvent.register('end', () => {});
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []); */}
+
+  const open = true;
+
+  return (
+    <motion.section
+      id="about"
+      className="flex flex-col mb-20"
+      //initial={{ opacity: 0.1, y: 10 }}
+      //animate={controls}
+      //transition={{ duration: 0.8 }}*/}
+    >
       <div className="flex flex-col justify-center items-center gap-8">
         <span className="text-purple-700 font-bold tracking-[8px] text-center mt-4">QUEM SOMOS ?</span>
         <div className="flex flex-row justify-center items-center">
@@ -30,9 +79,16 @@ export function About() {
           abraçando desafios complexos e entregando soluções sob medida que impulsionam o crescimento e a eficiência.
         </p>
       </div>
+
+      <motion.section
+      id="about"
+      className="flex flex-col mb-20"
+      //animate={controls}
+      //transition={{ duration: 0.8 }}
+      >
       <div id="contact" className="bg-gradient-to-r from-violet-900 via-white-90 to-zinc-950 px-8 lg:px-32 py-8 flex flex-col lg:flex-row lg:mx-8 lg:mt-8 justify-between items-center self-stretch rounded-[64px] gap-10 mt-12" style={{ marginBottom: '80px'}}>
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center gap-8">
-          <Map/>
+          <Map open={open}/>
         </div>
         <div className="flex w-full flex-col justify-center items-start gap-2">
           <h1 className="text-3xl text-center md:flex-grow md:text-left md:text-4xl lg:text-5xl font-bold">Estamos No <span className="bg-gradient-to-r from-pink-400 to-purple-200 text-transparent bg-clip-text">Coração</span> Da Inovação </h1>
@@ -40,6 +96,7 @@ export function About() {
           <a href="/contact" className="border px-8 py-[12px] bg-purple-700 rounded-lg hover:bg-purple-900 m-auto lg:m-0">SAIBA MAIS</a>
         </div>
       </div>
-    </section>
+      </motion.section>
+    </motion.section>
    )
 }
