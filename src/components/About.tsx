@@ -90,10 +90,10 @@ export function About() {
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center gap-8">
           <Map open={open}/>
         </div>
-        <div className="flex w-full flex-col justify-center items-start gap-2">
-          <h1 className="text-3xl text-center md:flex-grow md:text-left md:text-4xl lg:text-5xl font-bold">Estamos No <span className="bg-gradient-to-r from-pink-400 to-purple-200 text-transparent bg-clip-text">Coração</span> Da Inovação </h1>
-          <p className="text-pink-100 font-medium md:text-center md:flex-grow">Nossa sede tecnológica esta localizada em um centro vibrante onde ideias se tornam realidade. A Untitled, mergulhou na vanguarda da tecnologia para transformar visões em soluções digitais extraordinárias.</p>
-          <a href="/contact" className="border px-8 py-[12px] bg-purple-700 rounded-lg hover:bg-purple-900 m-auto lg:m-0">SAIBA MAIS</a>
+        <div className="flex w-full flex-col justify-center items-center gap-2">
+          <h1 className="text-3xl text-center md:flex-grow md:text-4xl lg:text-5xl font-bold">Estamos no <span className="bg-gradient-to-r from-violet-500 to-purple-200 text-transparent bg-clip-text">coração</span> da inovação </h1>
+          <p className="text-pink-100 font-medium text-center md:flex-grow">Nossa sede tecnológica esta localizada em um centro vibrante onde ideias se tornam realidade. A Untitled, mergulhou na vanguarda da tecnologia para transformar visões em soluções digitais extraordinárias.</p>
+          <a href="/contact" className="text-center border px-8 py-[12px] bg-purple-700 rounded-lg hover:bg-purple-900 m-auto lg:m-0">SAIBA MAIS</a>
         </div>
       </div>
       </motion.section>

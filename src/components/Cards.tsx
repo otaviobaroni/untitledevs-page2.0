@@ -13,7 +13,7 @@ export function Cards() {
       animate="visible"
       variants={cardVariants}
       transition={{ duration: 0.5, delay: 0.2 }} // Adicione um pequeno atraso se desejar
-      className="flex flex-col justify-center items-center gap-4 md:px-16 lg:px-0 self-stretch"
+      className="flex flex-col justify-center items-center gap-4 self-stretch"
     >
       <motion.div
         variants={cardVariants}
@@ -23,23 +23,23 @@ export function Cards() {
         <Card
           icon="gantt-chart-square"
           title="Consultoria"
-          content="Orientação especializada para alinhar sua infraestrutura de TI com seus objetivos de negócios."
+          content="Orientação especializada para alinhar sua infraestrutura de TI."
         />
         <Card
           icon="panel-top"
           title="Websites"
-          content="Crie uma presença online impressionante com sites adaptados a dispositivos móveis e desktops."
+          content="Sites de alta performace e adaptados a dispositivos móveis e desktops."
         />
         <Card
           icon="tablet-smartphone"
           title="Aplicativos"
-          content="Desenvolvimento de aplicativos sob medida para atender às necessidades exclusivas da sua empresa."
+          content="Desenvolvimento de aplicativos sob medida para atender às necessidades exclusivas."
         />
       </motion.div>
       <motion.div
         variants={cardVariants}
-        transition={{ duration: 0.5, delay: 0.6 }} // Adicione um pequeno atraso se desejar
-        className="w-full flex flex-col lg:flex-row justify-center items-center gap-4"
+        transition={{ duration: 0.5, delay: 0.6 }} 
+        className="w-full flex flex-col lg:flex-row justify-center items-center gap-4 "
       >
         <Card
           icon="building-2"
