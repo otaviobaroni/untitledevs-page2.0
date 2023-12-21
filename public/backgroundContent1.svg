@@ -1,0 +1,11 @@
+<svg class="fixed top-0 left-0 w-full h-full z-[-1]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path class="stroke-current stroke-2 text-blue-500" d="M0 40 Q 20 20, 40 40 T 80 40 T 120 40">
+    <animate
+      attributeName="d"
+      dur="5s"
+      repeatCount="indefinite"
+      keyTimes="0;0.5;1"
+      values="M0 40 Q 20 60, 40 40 T 80 40 T 120 40; M0 40 Q 20 20, 40 40 T 80 40 T 120 40; M0 40 Q 20 60, 40 40 T 80 40 T 120 40"
+    />
+  </path>
+</svg>
