@@ -5,6 +5,7 @@ const Loading = () => {
   return (
     <div className="w-full h-full flex items-center justify-center fixed top-0 left-0">
       <video
+        loop
         muted
         autoPlay
         playsInline
