@@ -50,7 +50,7 @@ export function Hero({ ref }: HeroProps) {
     <div className="flex items-start justify-start self-stretch py-16 gap-4 relative w-full lg:w-2/3">
       <div className="flex flex-col justify-center items-center gap-4">
           <motion.h1
-            className="text-3xl font-bold bg-gradient-to-r from-violet-500 via-white-70 to-purple-300 bg-clip-text text-transparent leading-tight lg:leading-tight lg:text-center"
+            className="text-3xl font-bold bg-gradient-to-r from-violet-500 via-white-70 to-purple-300 bg-clip-text text-transparent leading-tight lg:leading-tight lg:text-center lg:text-5xl "
             initial={{ opacity: 0 }}
             animate={controls}
             transition={{ duration: 0.5 }}
