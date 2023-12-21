@@ -29,7 +29,9 @@ export function MenuBar () {
       </nav>
     </div>
     <div className="flex md:hidden justify-between items-center top-0 ">
-      <Image className="w-[221px] h-8 block lg:hidden" priority={true} alt="Logo da Untitled Devs" src={Logo2} />
+      <a href="/">
+        <Image className="w-[221px] h-8 block lg:hidden" priority={true} alt="Logo da Untitled Devs" src={Logo2} />
+      </a>
       <button onClick={()=> {turn()}}><MenuIcon size={32}/></button>
     </div>
 

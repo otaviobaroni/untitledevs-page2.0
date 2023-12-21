@@ -16,7 +16,7 @@ export default function ContactPage() {
           <Contact />
 
           <div className="relative overflow-hidden group mt-8" style={{ marginBottom: '80px' }}>
-            <a href='https://wa.me/5516996461932' className='flex relative z-10 gap-2 font-thin text-3xl'>
+            <a href='https://wa.me/5516996461932' className='flex relative z-10 gap-2 font-thin text-3xl mt-8 md:mt-12'>
               Converse com nossa equipe no Whatsapp
               <Image src={whatsappIcon} width={30} alt='Whatsapp logo' />
             </a>
@@ -24,10 +24,10 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className='lg:w-1/3 flex flex-col justify-center items-stretch gap-8'>
+        <div className='lg:w-1/3 flex flex-col justify-center items-stretch gap-8 md:mt-12'>
           <h1 className='font-bold text-5xl'>Ideias que <span className='text-purple-500'>ganham</span> vida.</h1>
           <h1 className='font-bold text-xl'> Conecte-se <span className='bg-gradient-to-r from-purple-500 to-purple-300 text-transparent bg-clip-text'>conosco</span> e transforme sua visão em <span className='bg-gradient-to-r from-purple-500 to-purple-300 text-transparent bg-clip-text'>software</span> de sucesso.</h1>
-          <div>
+          <div className='md:mt-2'>
             <p className='text-purple-500 font-semibold'>
               ISSO É {''}
               <TypeAnimation

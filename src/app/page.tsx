@@ -34,7 +34,7 @@ export default function Home() {
           <Encryption />
           <Services ref={undefined} />
           <Modal />
-          <About />
+          <About ref={undefined}/>
           <Footer />
         </div>
       )}

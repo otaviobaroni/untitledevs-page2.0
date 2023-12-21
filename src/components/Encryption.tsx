@@ -5,7 +5,6 @@ const Encryption = () => {
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full lg:flex-row lg:mx-4 lg:mt-4 " style={{ zIndex: open ? -1 : 0 }}> 
         <video
-          loop
           muted
           autoPlay
           playsInline

@@ -1,9 +1,42 @@
 import { Map } from '@/components/mapLocation';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Events } from 'react-scroll';
+import { Link as ScrollLink, Events } from 'react-scroll';
 
-export function About() {
+interface AboutProps {
+  ref: React.RefObject<HTMLDivElement>;
+}
+
+export function About({ ref }: AboutProps) {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const opacity = Math.min(1, Math.max(0, currentScrollY / 400));
+
+      if (controls) {
+        controls.start({ opacity: opacity, y: 0 });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [controls]);
+
+  useEffect(() => {
+    Events.scrollEvent.register('begin', () => {});
+    Events.scrollEvent.register('end', () => {});
+
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
+  
   {/* const controls = useAnimation();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
@@ -51,12 +84,19 @@ export function About() {
     <motion.section
       id="about"
       className="flex flex-col mb-20"
+      ref={ref}
+      animate={controls}
+      initial={{ opacity: 0.1, y: 40 }}
+      transition={{ duration: 0.9}}
+      style={{ zIndex: open ? -1 : 0 }}
       //initial={{ opacity: 0.1, y: 10 }}
       //animate={controls}
       //transition={{ duration: 0.8 }}*/}
     >
       <div className="flex flex-col justify-center items-center gap-8">
+      <ScrollLink to="about" smooth duration={500}>
         <span className="text-purple-700 font-bold tracking-[8px] text-center mt-4">QUEM SOMOS ?</span>
+      </ScrollLink>
         <div className="flex flex-row justify-center items-center">
           <p className="lg:text-7xl font-bold text-center gap-4 mr-4">
             A <span className="text-purple-700 ">Untitled</span> é uma desenvolvedora de software movida por transformar ideias em soluções digitais excepcionais.
@@ -79,6 +119,7 @@ export function About() {
           abraçando desafios complexos e entregando soluções sob medida que impulsionam o crescimento e a eficiência.
         </p>
       </div>
+      
 
       <motion.section
       id="about"

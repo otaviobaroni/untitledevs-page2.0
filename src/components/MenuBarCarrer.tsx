@@ -12,7 +12,7 @@ export function MenuBarCarrer() {
   const {open, turn} = useContext(MenuContext)
 
   useEffect(() => {
-    console.log(open)
+
   }, [open])
   return (
     <>
@@ -21,13 +21,17 @@ export function MenuBarCarrer() {
         <Image alt="Logo da Untitled Devs" src={Logo2} className="w-[343px] h-[50px] block" />
       </a>
       <nav className="flex flex-row items-center justify-between gap-4">
+        <Link href="/" onClick={()=> {turn()}} className="hover:text-purple-500"><span>HOME</span></Link>
+        <span className="pointer-events-none">|</span>
         <Link href="/#services" className="hover:text-purple-500"><span>SERVIÇOS</span></Link>
         <span className="pointer-events-none">|</span>
         <Link href="/#about" className="hover:text-purple-500"><span>SOBRE NÓS</span></Link>
       </nav>
     </div>
     <div className="flex flex-row md:hidden items-center justify-between gap-4 ">
-      <Image className="w-[221px] h-8 block lg:hidden" alt="Logo da Untitled Devs" src={Logo2} />
+      <a href="/">
+        <Image className="w-[221px] h-8 block lg:hidden" priority={true} alt="Logo da Untitled Devs" src={Logo2} />
+      </a>
       <button onClick={()=> {turn()}}><MenuIcon size={32}/></button>
     </div>
 

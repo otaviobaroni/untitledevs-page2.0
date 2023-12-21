@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  corePlugins: {
+    negativeMargin: ['responsive', 'always'], // enable negative margin utilities
+  },
   presets: ['next/babel'],
     plugins: [
         [
