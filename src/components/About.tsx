@@ -81,19 +81,19 @@ export function About({ ref }: AboutProps) {
   const open = true;
 
   return (
-    <motion.section
+    <section
       id="about"
       className="flex flex-col mb-20"
-      ref={ref}
-      animate={controls}
-      initial={{ opacity: 0.1, y: 20}}
-      transition={{ duration: 1.5}}
-      style={{ zIndex: open ? -1 : 0 }}
+     
       //initial={{ opacity: 0.1, y: 10 }}
       //animate={controls}
       //transition={{ duration: 0.8 }}*/}
     >
-      <div className="flex flex-col justify-center items-center gap-8">
+      <motion.div className="flex flex-col justify-center items-center gap-8"  ref={ref}
+      animate={controls}
+      initial={{ opacity: 0.1, y: 20}}
+      transition={{ duration: 1.5}}
+      style={{ zIndex: open ? -1 : 0 }}>
       <ScrollLink to="about" smooth duration={500}>
         <span className="text-purple-700 font-bold tracking-[8px] text-center mt-4">QUEM SOMOS ?</span>
       </ScrollLink>
@@ -118,10 +118,10 @@ export function About({ ref }: AboutProps) {
           unem para moldar o futuro da tecnologia. Trabalhamos em estreita colaboração com nossos clientes para entender suas necessidades, 
           abraçando desafios complexos e entregando soluções sob medida que impulsionam o crescimento e a eficiência.
         </p>
-      </div>
+      </motion.div >
       
 
-      <motion.section
+      <section
       id="about"
       className="flex flex-col mb-20"
       //animate={controls}
@@ -137,7 +137,7 @@ export function About({ ref }: AboutProps) {
           <a href="/contact" className="text-center border px-8 py-[12px] bg-purple-700 rounded-lg hover:bg-purple-900 m-auto lg:m-0">SAIBA MAIS</a>
         </div>
       </div>
-      </motion.section>
-    </motion.section>
+      </section>
+    </section>
    )
 }
