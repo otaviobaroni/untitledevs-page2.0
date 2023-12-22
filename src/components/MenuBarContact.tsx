@@ -21,7 +21,7 @@ export function MenuBarContact() {
         <Image alt="Logo da Untitled Devs" src={Logo2} className="w-[343px] h-[50px] block" />
       </a>
       <nav className="flex flex-row items-center justify-between gap-4">
-        <Link href="/" onClick={()=> {turn()}} className="hover:text-purple-500"><span>HOME</span></Link>
+        <Link href="/" className="hover:text-purple-500"><span>HOME</span></Link>
         <span className="pointer-events-none">|</span>
         <Link href="/#services" className="hover:text-purple-500"><span>SERVIÇOS</span></Link>
         <span className="pointer-events-none">|</span>
